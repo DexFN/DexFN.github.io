@@ -15,7 +15,7 @@ body {
 header {
     position: relative;
     height: 100vh;
-    background: url('images/banner.png') no-repeat center center/cover;
+    background: url('banner.png') no-repeat center center/cover;
     background-attachment: fixed;
     color: #f5c518; /* Gold text color for header */
 }
