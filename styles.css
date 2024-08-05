@@ -1,32 +1,46 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, a {
+/* CSS Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
     color: #f5c518; /* Gold text color */
     background-color: #1e1e1e; /* Dark background color */
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
+a {
+    color: #f5c518;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
 header {
     position: relative;
     height: 100vh;
     background: url('bannerv2.png') no-repeat center center/cover;
     background-attachment: fixed;
-    color: #f5c518; /* Gold text color for header */
+    color: #f5c518;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem; /* Added padding for responsiveness */
 }
 
 .header-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #f5c518; /* Gold text color */
+    max-width: 80%;
+    padding: 1rem;
+    color: #f5c518;
 }
 
 .logo {
@@ -37,6 +51,8 @@ header {
 header h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better visibility */
 }
 
 header p {
@@ -49,21 +65,24 @@ header p {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #f5c518; /* Gold background for button */
+    background-color: #f5c518; /* Gold background */
     text-decoration: none;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 0.5rem; /* More rounded corners */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
 }
 
 .btn:hover {
-    background-color: #d4a400; /* Slightly darker gold for hover effect */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    background-color: #d4a400; /* Darker gold */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
+/* Section Styles */
 section {
-    padding: 4rem 1rem;
-    background-color: #2b2b2b; /* Slightly lighter dark background for sections */
+    padding: 4rem 2rem;
+    background-color: #2b2b2b;
+    color: #f5c518; /* Gold text color */
 }
 
 section .container {
@@ -73,68 +92,111 @@ section .container {
 
 section h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #f5c518;
+    margin: 1rem auto;
+    border-radius: 2px;
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .feature-item {
-    background-color: #333; /* Dark background for feature items */
+    background-color: #333;
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0.75rem; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-item:hover {
-    transform: translateY(-10px); /* Lift the feature item on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .feature-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .feature-item p {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
+/* Downloads Section */
 #downloads {
-    background-color: #1e1e1e; /* Dark background for the downloads section */
+    background-color: #1e1e1e;
+    padding: 4rem 2rem;
 }
 
 .download-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .download-btn {
-    background-color: #f5c518; /* Gold background for download buttons */
-    padding: 0.75rem 2rem; /* Larger padding for download buttons */
-    font-size: 1.1rem; /* Slightly larger font size */
+    background-color: #f5c518;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
 }
 
 .download-btn:hover {
-    background-color: #d4a400; /* Slightly darker gold for hover effect */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    background-color: #d4a400;
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
+/* Footer Styles */
 footer {
     padding: 1rem;
-    background-color: #121212; /* Dark footer background */
+    background-color: #121212;
     text-align: center;
 }
 
 footer p {
     font-size: 0.875rem;
-    color: #f5c518; /* Gold text color for footer */
+    color: #f5c518;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-item p {
+        font-size: 1rem;
+    }
+
+    .btn, .download-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
 }
